@@ -1,0 +1,260 @@
+/* Estilo general */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f8fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+input, textarea, select {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Formulario */
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+/* Buscador */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 60%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Contenedor de la lista de problemas */
+.issue-list {
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la tabla */
+.issue-table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.issue-table th, .issue-table td {
+  padding: 12px;
+  text-align: lef;
+  border: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+  color: #444;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.issue-table th {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.issue-table td {
+  background-color: #f9f9f9;
+}
+
+.issue-table tr:nth-child(even) td {
+  background-color: #f1f3f5;
+}
+
+.issue-table tr:hover td {
+  background-color: #e9ecef;
+}
+
+.issue-table th, .issue-table td {
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.issue-table td:last-child {
+  text-align: center;
+}
+
+/* Ajustar el ancho de cada columna */
+.issue-table th:nth-child(1), .issue-table td:nth-child(1) { width: 15%; } /* Título */
+.issue-table th:nth-child(2), .issue-table td:nth-child(2) { width: 30%; } /* Descripción */
+.issue-table th:nth-child(3), .issue-table td:nth-child(3) { width: 15%; } /* Estado */
+.issue-table th:nth-child(4), .issue-table td:nth-child(4) { width: 10%; } /* Acciones */
+.issue-table th:nth-child(5), .issue-table td:nth-child(5) { width: 20%; } /* Fecha de actualización */
+
+/* Estilo para cada fila */
+.issue-table tr {
+  display: table-row;
+}
+
+.issue-table td {
+  display: table-cell;
+}
+
+/* Indicadores de estado (Semáforo) */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-indicator span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.status-new {
+  background-color: #a3a3a3; /* Gris */
+}
+
+.status-in-progress {
+  background-color: #ffc107; /* Amarillo */
+}
+
+.status-resolved {
+  background-color: #28a745; /* Verde */
+}
+
+.status-closed {
+  background-color: #dc3545; /* Rojo */
+}
+
+/* Botón de eliminar */
+.delete-button {
+  display: flex;
+  justify-content: center;
+}
+
+.delete-button button {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+
+.delete-button button:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.app-header {
+  width: 100%;
+  background-color: #2b5f98;
+  color: #fff;
+  padding: 1px 0;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.app-footer {
+  width: 100%;
+  background-color: #2b5f98;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.app-main {
+  width: 100%;
+  padding-bottom: 60px; /* Para que el contenido no quede oculto por el footer fijo */
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+  gap: 20px; /* Espacio entre los elementos */
+  padding: 20px;
+  max-width: 1200px; /* Ancho máximo para el contenido */
+  margin: 0 auto; /* Centra el contenido */
+}
+
+.search-bar-container {
+  width: 100%;
+  max-width: 600px; /* Limita el ancho de la barra de búsqueda */
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.issues-table-container {
+  width: 100%;
+  max-width: 1200px; /* Ancho máximo para la tabla */
+  overflow-x: auto; /* Habilita el desplazamiento horizontal si la tabla es ancha */
+}
