@@ -14,7 +14,7 @@ const Issues = () => {
   const [updateStatus, setUpdateStatus] = useState({ id: '', status: '' });
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/issues')
+    axios.get('https://backend-kf4i.onrender.com')
       .then(response => {
         setIssues(response.data);
         setFilteredIssues(response.data);
@@ -34,7 +34,7 @@ const Issues = () => {
   const handleSubmit = (newIssue) => {
     // Asigna "NUEVO" por defecto si no se proporciona
     const issueWithStatus = { ...newIssue, status: "NUEVO" };
-    axios.post('http://localhost:5000/api/issues', issueWithStatus)
+    axios.post('https://backend-kf4i.onrender.com', issueWithStatus)
       .then(response => {
         setIssues([...issues, response.data]);
         setFilteredIssues([...filteredIssues, response.data]);
@@ -43,7 +43,7 @@ const Issues = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/issues/${id}`)
+    axios.delete(`https://backend-kf4i.onrender.com/${id}`)
       .then(() => {
         setIssues(issues.filter(issue => issue._id !== id));
         setFilteredIssues(filteredIssues.filter(issue => issue._id !== id));
@@ -54,7 +54,7 @@ const Issues = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
     const currentDate = new Date();
-    axios.put(`http://localhost:5000/api/issues/${updateStatus.id}`, {
+    axios.put(`https://backend-kf4i.onrender.com/${updateStatus.id}`, {
       status: updateStatus.status,
       updatedAt: currentDate,
     })
